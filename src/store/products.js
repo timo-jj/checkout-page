@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import model from "./model";
 
 export default {
   namespaced: true,
@@ -17,8 +18,10 @@ export default {
 
   actions: {
     async getProducts({ commit }) {
-      const res = await axios.get("https://api.npoint.io/ec39ab1aa4edf145235a");
-      commit("SET_PRODUCTS", res.data.products);
+      // const res = await axios.get("https://api.npoint.io/ec39ab1aa4edf145235a");
+      // commit("SET_PRODUCTS", res.data.products);
+      const res = model;
+      commit("SET_PRODUCTS", res);
       localStorage.setItem("products", JSON.stringify(res.data.products));
     },
   },
